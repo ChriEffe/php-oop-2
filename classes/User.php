@@ -1,11 +1,9 @@
 <?php 
 
 require_once __DIR__ ."/Card.php";
-require_once __DIR__ ."/../traits/PremiumUser.php";
 
 class User
 {
-    use PremiumUser;
     protected $name;
     protected $lastName;
     protected $age;

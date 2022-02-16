@@ -1,11 +1,14 @@
 <?php 
 
-trait PremiumUser
+require_once __DIR__ ."/User.php";
+
+class PremiumUser extends User
 {
     protected $level;
 
-    public function __construct($level) {
-        parent::__construct($name, $lastName, $age, $email, $address, $card);
+    public function __construct($level, $name, $lastName, $age, $email, $address, $card) {
+        parent:: __construct($name, $lastName, $age, $email, $address, $card);
+        $this->setLevel($level);
     }
 
     /**

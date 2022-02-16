@@ -4,9 +4,7 @@ require_once __DIR__ ."/classes/Product.php";
 require_once __DIR__ ."/classes/User.php";
 
 try {
-    $newUser = new User ("Christian", "Ferrazzano", "christian@mail.com", "28", "via delle vie", new Card("Christian Ferrazzano", "65461516511", "12/22", "666"));
-
-    $newUser->setLevel("gold");
+    $newUser = new User ("gold", "Christian", "Ferrazzano", "christian@mail.com", "28", "via delle vie", new Card("Christian Ferrazzano", "65461516511", "12/22", "666"));
 
     $newProduct = new Product("Jordan 1", 210.00);
 
