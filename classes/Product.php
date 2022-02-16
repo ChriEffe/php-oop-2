@@ -6,8 +6,12 @@ class Product
     protected $price;
 
     public function __construct($name, $price) {
-        $this->name = $name;
-        $this->price = $price;
+        try {
+            $this->name = $name;
+            $this->setPrice($price);
+        } catch (TypeError $error) {
+            throw new Exception ($error->getMessage());
+        }
     }
 
     /**
@@ -45,6 +49,10 @@ class Product
      */ 
     public function setPrice($price)
     {
+        if ($price < 50) {
+            throw new Exception("Il prezzo non è corretto");
+        }
+        
         $this->price = $price;
 
         return $this;

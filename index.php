@@ -8,8 +8,8 @@ try {
 
     var_dump($newUser);
     
-} catch (\Throwable $th) {
-    //throw $th;
+} catch (Exception $error) {
+    echo $error->getMessage();
 }
 
 ?>
