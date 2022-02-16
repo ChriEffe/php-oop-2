@@ -1,18 +1,22 @@
 <?php 
 
 require_once __DIR__ ."/Card.php";
+require_once __DIR__ ."/../traits/PremiumUser.php";
 
 class User
 {
+    use PremiumUser;
     protected $name;
     protected $lastName;
+    protected $age;
     protected $email;
     protected $address;
     protected $card;
 
-    public function __construct($name, $lastName, $email, $address, $card) {
+    public function __construct($name, $lastName, $age, $email, $address, $card) {
         $this->name = $name;
         $this->lastName = $lastName;
+        $this->age = $age;
         $this->email = $email;
         $this->address = $address;
         $this->setCard($card);
@@ -115,6 +119,26 @@ class User
     public function setCard(Card $card)
     {
         $this->card = $card;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of age
+     */ 
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Set the value of age
+     *
+     * @return  self
+     */ 
+    public function setAge($age)
+    {
+        $this->age = $age;
 
         return $this;
     }
